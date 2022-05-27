@@ -29,8 +29,7 @@ for i in range(nLinhas):
     if i < nLinhas /2:
         valorLinha = valorLinha +1
     elif i> nLinhas/2:
-        valorLinha = valorLinha -1 
-   
+        valorLinha = valorLinha -1  
     valorColuna = valorLinha
     for j in range(nColunas):
         aux.append(valorColuna)
@@ -41,5 +40,25 @@ for i in range(nLinhas):
     mat.append(aux)
 
 imprimirMatriz(mat,nLinhas,nColunas)
+##################################### OUTRA SOLUÇÃO, MAIS COMPLEXA, MAS QUE APROVEITA OS ESPELHAMENTOS
+mat = []
+# Criando uma matriz só com zeros
+for i in range(nLinhas):
+    mat.append([0]*nColunas)
+
+#imprimirMatriz(mat,nLinhas,nColunas)
+
+for i in range(0, int (nLinhas/2)):
+    valorLinha = i+1
+    valorColuna = valorLinha
+    for j in range(0, int(nColunas/2)+1):
+        mat[i][j] = valorColuna
+        mat[i][-(j+1)] = valorColuna #espelha as colunas na linha
+        mat[-(i+1)][j] = valorColuna #espelha as linhas até a metade das colunas
+        mat[-(i+1)][-(j+1)] = valorColuna #espelha as linhas da metade até o fim das colunas
+        valorColuna = valorColuna+1
+
+imprimirMatriz(mat,nLinhas,nColunas)
+    
 
 
