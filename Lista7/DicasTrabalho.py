@@ -20,6 +20,12 @@ def salvarMatrizCSV(nomeArquivo,mat,linhas,colunas):
         arqEscrita.write('\n')
     arqEscrita.close()
 
+def lerArquivo(nomeArquivo):
+    #fazer a leitura e armazenar numa matriz
+    mat = [1, 2, 3]
+    #...
+    return mat
+
 
 def getI(letra):
     if letra == 'A':
@@ -55,6 +61,8 @@ nomeArquivo = input('Digite o nome do arquivo: ')
 
 salvarMatriz(nomeArquivo,matAssentos,6,29)
 
+matAssentos = lerArquivo('lalala')
 
+print(matAssentos)
 
 #mat[fileiras.A][0] = 'X'
