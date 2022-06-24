@@ -34,12 +34,14 @@ contJ2 = 0
 bingo = False
 
 while bingo == False:
-    #Pega sempre o indice do ultimo elemento da Lista S
-    i = len(S) - 1
+    # Sorteia um indice de elemento da Lista S
+    i = random.randint(0,len(S)-1)
     # copiando o valor do elemento i 
     nroSorteado = S[i]
     # removendo o elemento da lista S
-    S.pop()
+    S.pop(i)
+
+    # apenas para debug: imprimindo o nro sorteado e a lista sem ele
     print(nroSorteado)
     print(S)
 
