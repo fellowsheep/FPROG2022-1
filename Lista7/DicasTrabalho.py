@@ -64,5 +64,4 @@ salvarMatriz(nomeArquivo,matAssentos,6,29)
 matAssentos = lerArquivo('lalala')
 
 print(matAssentos)
-
 #mat[fileiras.A][0] = 'X'
